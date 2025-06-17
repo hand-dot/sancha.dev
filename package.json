@@ -1,0 +1,20 @@
+{
+  "name": "sancha.dev",
+  "version": "1.0.0",
+  "description": "三軒茶屋の開発者コミュニティ",
+  "scripts": {
+    "dev": "concurrently \"npm run serve\" \"npm run css:watch\"",
+    "serve": "serve -p 3000",
+    "css:watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "css:build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build": "npm run css:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "serve": "^14.2.4",
+    "tailwindcss": "^3.4.17"
+  }
+}
