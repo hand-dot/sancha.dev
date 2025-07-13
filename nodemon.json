@@ -1,0 +1,9 @@
+{
+  "watch": ["events/src/**/*.md", "includes/**/*.html"],
+  "ext": "md,html",
+  "exec": "npm run build:includes && npm run build:events",
+  "verbose": true,
+  "delay": "500",
+  "ignoreRoot": [".git"],
+  "ignore": ["events/*.html", "!events/index.html", "!events/_template.html"]
+}

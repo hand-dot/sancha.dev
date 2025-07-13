@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>イベント一覧 - 三茶.dev</title>
+    <meta name="description" content="三茶.devが開催するイベントの一覧" />
+    <link rel="canonical" href="https://sancha.dev/events/" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="イベント一覧 - 三茶.dev" />
+    <meta
+      property="og:description"
+      content="三茶.devが開催するイベントの一覧"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sancha.dev/events/" />
+    <meta property="og:image" content="https://sancha.dev/ogp.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <link href="../dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="font-sans text-primary">
+    <!-- include:header -->
+<!-- ⚠️ 警告: このヘッダーは自動生成されます。変更は /includes/header.html で行ってください ⚠️ -->
+<!-- ヘッダー -->
+<header class="bg-white shadow-sm fixed top-0 w-full z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold">三茶.dev</a>
+      <div class="space-x-6">
+        <a href="/events/" class="hover:text-secondary transition-colors"
+          >イベント</a
+        >
+        <a href="/#email-signup" class="hover:text-secondary transition-colors"
+          >最新情報を受け取る</a
+        >
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- /include:header -->
+
+    <!-- メインコンテンツ -->
+    <main class="min-h-screen bg-gray-50">
+      <!-- ヘッダーセクション -->
+      <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl font-bold mb-4">イベント一覧</h1>
+          <p class="text-lg text-gray-600">
+            三茶.devが開催する勉強会・もくもく会・交流会の情報
+          </p>
+        </div>
+      </section>
+
+      <!-- イベント一覧 -->
+      <section class="py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid gap-6">
+            <a
+              href="/events/2025-02-15.html"
+              class="block bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow opacity-60"
+            >
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold">第1回 三茶.dev もくもく会</h3>
+                <span
+                  class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded"
+                  >終了</span
+                >
+              </div>
+              <p class="text-gray-600">
+                <span class="block">📅 2025-02-15 14:00-17:00</span>
+                <span class="block">📍 カフェ・オブスキュラ（三軒茶屋）</span>
+                <span class="block">👥 定員 20名</span>
+              </p>
+            </a>
+          </div>
+
+          <!-- イベントがない場合のメッセージ -->
+          <div
+            class="text-center py-12 text-gray-500"
+            style="display: none"
+            id="no-events"
+          >
+            <p class="text-lg">現在、開催予定のイベントはありません。</p>
+            <p class="mt-2">
+              最新情報は<a
+                href="/#email-signup"
+                class="text-secondary hover:underline"
+                >メールで受け取る</a
+              >ことができます。
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- include:footer -->
+<!-- ⚠️ 警告: このフッターは自動生成されます。変更は /includes/footer.html で行ってください ⚠️ -->
+<!-- フッター -->
+<footer class="bg-primary text-white py-8 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="mb-4">© 2025 三茶.dev</p>
+  </div>
+</footer>
+<!-- /include:footer -->
+
+    <script>
+      // イベントがない場合の表示制御
+      document.addEventListener("DOMContentLoaded", function () {
+        const eventsList = document.querySelector(".grid");
+        const noEvents = document.getElementById("no-events");
+        if (eventsList && eventsList.children.length === 0) {
+          noEvents.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>

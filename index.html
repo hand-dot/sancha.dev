@@ -1,208 +1,297 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>三茶.dev - 三軒茶屋の開発者コミュニティ</title>
-    <meta name="description" content="今日のコミット、三茶でシェアしよう。三軒茶屋を拠点とする開発者のためのゆるくつながるローカルコミュニティ。">
-    <link rel="canonical" href="https://sancha.dev/">
-    
+    <meta
+      name="description"
+      content="今日のコミット、三茶でシェアしよう。三軒茶屋を拠点とする開発者のためのゆるくつながるローカルコミュニティ。"
+    />
+    <link rel="canonical" href="https://sancha.dev/" />
+
     <!-- OGP -->
-    <meta property="og:title" content="三茶.dev - 三軒茶屋の開発者コミュニティ">
-    <meta property="og:description" content="今日のコミット、三茶でシェアしよう。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sancha.dev">
-    <meta property="og:image" content="https://sancha.dev/ogp.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://sancha.dev/ogp.png">
-    
+    <meta
+      property="og:title"
+      content="三茶.dev - 三軒茶屋の開発者コミュニティ"
+    />
+    <meta
+      property="og:description"
+      content="今日のコミット、三茶でシェアしよう。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sancha.dev" />
+    <meta property="og:image" content="https://sancha.dev/ogp.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://sancha.dev/ogp.png" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Tailwind CSS -->
-    <link href="./dist/output.css" rel="stylesheet">
-</head>
-<body class="font-sans text-primary">
+    <link href="./dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="font-sans text-primary">
+    <!-- include:header -->
+<!-- ⚠️ 警告: このヘッダーは自動生成されます。変更は /includes/header.html で行ってください ⚠️ -->
+<!-- ヘッダー -->
+<header class="bg-white shadow-sm fixed top-0 w-full z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <nav class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold">三茶.dev</a>
+      <div class="space-x-6">
+        <a href="/events/" class="hover:text-secondary transition-colors"
+          >イベント</a
+        >
+        <a href="/#email-signup" class="hover:text-secondary transition-colors"
+          >最新情報を受け取る</a
+        >
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- /include:header -->
+
     <!-- ヒーローセクション -->
-    <section class="py-40 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                今日のコミット、<br>三茶でシェアしよう🍵
-            </h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-8">
-                開発者のための、ゆるくつながるローカルコミュニティ
-            </p>
-            <a href="#email-signup" class="bg-secondary text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-colors inline-block">
-                最新情報を受け取る
-            </a>
-        </div>
+    <section
+      class="py-40 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100"
+    >
+      <div class="text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          今日のコミット、<br />三茶でシェアしよう🍵
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8">
+          開発者のための、ゆるくつながるローカルコミュニティ
+        </p>
+        <a
+          href="#email-signup"
+          class="bg-secondary text-white px-8 py-4 rounded-lg hover:bg-green-600 transition-colors inline-block"
+        >
+          最新情報を受け取る
+        </a>
+      </div>
     </section>
 
     <!-- Aboutセクション -->
-    <section class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">三茶.devとは</h2>
-            <p class="text-lg leading-relaxed mb-12">
-                三茶.dev（さんちゃデブ）は、三軒茶屋を拠点とする開発者コミュニティです。経験やスキルレベルに関係なく、「コードを書くのが好き」という共通点でつながる場所。カフェ文化が根付く三茶で、コーヒー片手にコードを書き、仕事帰りには一杯飲みながら技術談義を楽しむ。そんな「ローカル×テック」の新しいカタチを目指しています。
+    <section id="about" class="py-20 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">三茶.devとは</h2>
+        <p class="text-lg leading-relaxed mb-12">
+          三茶.dev（さんちゃデブ）は、三軒茶屋を拠点とする開発者コミュニティです。経験やスキルレベルに関係なく、「コードを書くのが好き」という共通点でつながる場所。カフェ文化が根付く三茶で、コーヒー片手にコードを書き、仕事帰りには一杯飲みながら技術談義を楽しむ。そんな「ローカル×テック」の新しいカタチを目指しています。
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-4xl mb-4">🌱</div>
+            <h3 class="text-xl font-bold mb-2">初心者も、ベテランも</h3>
+            <p class="text-gray-600">
+              経験年数は関係ありません。学び始めたばかりの方も大歓迎です。
             </p>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="text-4xl mb-4">🌱</div>
-                    <h3 class="text-xl font-bold mb-2">初心者も、ベテランも</h3>
-                    <p class="text-gray-600">経験年数は関係ありません。学び始めたばかりの方も大歓迎です。</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl mb-4">📍</div>
-                    <h3 class="text-xl font-bold mb-2">三茶というローカル</h3>
-                    <p class="text-gray-600">オンラインでは得られない、リアルな繋がりと地域性を大切にします。</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-2">ゆるく、でも真剣に</h3>
-                    <p class="text-gray-600">カジュアルな雰囲気の中で、真剣に技術と向き合います。</p>
-                </div>
-            </div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">📍</div>
+            <h3 class="text-xl font-bold mb-2">三茶というローカル</h3>
+            <p class="text-gray-600">
+              オンラインでは得られない、リアルな繋がりと地域性を大切にします。
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl mb-4">🎯</div>
+            <h3 class="text-xl font-bold mb-2">ゆるく、でも真剣に</h3>
+            <p class="text-gray-600">
+              カジュアルな雰囲気の中で、真剣に技術と向き合います。
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- 活動内容セクション -->
     <section class="py-20 px-4 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">活動内容</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">もくもく会</h3>
-                    <p class="text-gray-600">黙々と、でも一緒に。個人プロジェクトや学習を進めながら、休憩時間には技術の話題で盛り上がります。</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">勉強会 & LT会</h3>
-                    <p class="text-gray-600">知識をシェアし、刺激し合う。新しい技術やツール、個人プロジェクトについて発表する場です。</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">輪読会</h3>
-                    <p class="text-gray-600">一冊の技術書を、みんなで読む。章ごとに担当を決めて、理解を深めながら進めていきます。</p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">懇親会</h3>
-                    <p class="text-gray-600">コードの話も、そうじゃない話も。三茶の美味しいお店で、リラックスした雰囲気で交流します。</p>
-                </div>
-            </div>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">活動内容</h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold mb-4">もくもく会</h3>
+            <p class="text-gray-600">
+              黙々と、でも一緒に。個人プロジェクトや学習を進めながら、休憩時間には技術の話題で盛り上がります。
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold mb-4">勉強会 & LT会</h3>
+            <p class="text-gray-600">
+              知識をシェアし、刺激し合う。新しい技術やツール、個人プロジェクトについて発表する場です。
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold mb-4">輪読会</h3>
+            <p class="text-gray-600">
+              一冊の技術書を、みんなで読む。章ごとに担当を決めて、理解を深めながら進めていきます。
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-bold mb-4">懇親会</h3>
+            <p class="text-gray-600">
+              コードの話も、そうじゃない話も。三茶の美味しいお店で、リラックスした雰囲気で交流します。
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- こんな方におすすめセクション -->
     <section class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">こんな方におすすめ</h2>
-            
-            <ul class="space-y-4 text-lg">
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>三軒茶屋周辺で働いている・住んでいる開発者</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>昔三茶に住んでいた、懐かしい街で開発者仲間と会いたい方</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>三茶の美味しいお店を開拓しながら技術交流したい方</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>「三軒茶屋ってどんな街？」と気になっている開発者</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>オフラインで技術コミュニティに参加したい方</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>独学でプログラミングを学んでいて、仲間が欲しい方</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>自分の知識をシェアしたい、誰かの知識を吸収したい方</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>技術の話をしながら飲むのが好きな方</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-accent mr-3">•</span>
-                    <span>リモートワークで孤独を感じている、誰かと話したい開発者</span>
-                </li>
-            </ul>
-        </div>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">こんな方におすすめ</h2>
+
+        <ul class="space-y-4 text-lg">
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>三軒茶屋周辺で働いている・住んでいる開発者</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>昔三茶に住んでいた、懐かしい街で開発者仲間と会いたい方</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>三茶の美味しいお店を開拓しながら技術交流したい方</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>「三軒茶屋ってどんな街？」と気になっている開発者</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>オフラインで技術コミュニティに参加したい方</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>独学でプログラミングを学んでいて、仲間が欲しい方</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>自分の知識をシェアしたい、誰かの知識を吸収したい方</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>技術の話をしながら飲むのが好きな方</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-accent mr-3">•</span>
+            <span>リモートワークで孤独を感じている、誰かと話したい開発者</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- メール登録セクション -->
     <section id="email-signup" class="py-20 px-4 bg-gray-50">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">最新情報を受け取る</h2>
-            
-            <div class="w-full max-w-2xl mx-auto">
-                <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSfj7wi4qDOH9Vejq3ZoS6wLXiL9UIEEnFHxCZVC8BcDkE1DfA/viewform?embedded=true"
-                    class="w-full h-[1380px]"
-                    style="min-height: 1380px;"
-                    frameborder="0"
-                    marginheight="0"
-                    marginwidth="0">
-                    読み込んでいます...
-                </iframe>
-            </div>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">最新情報を受け取る</h2>
+        <p class="text-lg text-center mb-8">
+          イベント情報やコミュニティの最新ニュースをメールでお届けします。以下のフォームからご登録ください。
+          <br />
+          ※こちらはイベント申込フォームではありません
+        </p>
+        <div class="w-full max-w-2xl mx-auto">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfj7wi4qDOH9Vejq3ZoS6wLXiL9UIEEnFHxCZVC8BcDkE1DfA/viewform?embedded=true"
+            class="w-full h-[1380px]"
+            style="min-height: 1380px"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+          >
+            読み込んでいます...
+          </iframe>
         </div>
+      </div>
     </section>
 
     <!-- オーガナイザーセクション -->
     <section class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">オーガナイザー</h2>
-            <p class="text-center text-gray-600 mb-12">三茶.devを運営しているメンバーです</p>
-            
-            <div class="flex flex-wrap justify-center gap-8">
-                <a href="https://x.com/labelmake" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div class="text-center">
-                        <img src="/kyohei.jpg" alt="@labelmake" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-                        <p class="font-bold">Kyohei</p>
-                    </div>
-                </a>
-                
-                <a href="https://x.com/kei_english_ca" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div class="text-center">
-                        <img src="/kei.jpg" alt="@kei_english_ca" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-                        <p class="font-bold">Kei</p>
-                    </div>
-                </a>
-                
-                <a href="https://x.com/_poteboy_" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <div class="text-center">
-                        <img src="/poteboy.jpg" alt="@_poteboy_" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-                        <p class="font-bold">Poteboy</p>
-                    </div>
-                </a>
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">オーガナイザー</h2>
+        <p class="text-center text-gray-600 mb-12">
+          三茶.devを運営しているメンバーです
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-8">
+          <a
+            href="https://x.com/labelmake"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div class="text-center">
+              <img
+                src="/kyohei.jpg"
+                alt="@labelmake"
+                class="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+              />
+              <p class="font-bold">Kyohei</p>
             </div>
+          </a>
+
+          <a
+            href="https://x.com/kei_english_ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div class="text-center">
+              <img
+                src="/kei.jpg"
+                alt="@kei_english_ca"
+                class="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+              />
+              <p class="font-bold">Kei</p>
+            </div>
+          </a>
+
+          <a
+            href="https://x.com/_poteboy_"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div class="text-center">
+              <img
+                src="/poteboy.jpg"
+                alt="@_poteboy_"
+                class="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
+              />
+              <p class="font-bold">Poteboy</p>
+            </div>
+          </a>
         </div>
+      </div>
     </section>
 
-    <!-- フッター -->
-    <footer class="bg-primary text-white py-8 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="mb-4">© 2025 三茶.dev</p>
-        </div>
-    </footer>
-</body>
+    <!-- include:footer -->
+<!-- ⚠️ 警告: このフッターは自動生成されます。変更は /includes/footer.html で行ってください ⚠️ -->
+<!-- フッター -->
+<footer class="bg-primary text-white py-8 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="mb-4">© 2025 三茶.dev</p>
+  </div>
+</footer>
+<!-- /include:footer -->
+  </body>
 </html>

@@ -12,8 +12,10 @@
 
 - **HTML/CSS**: シンプルな静的サイト
 - **Tailwind CSS**: スタイリング
-- **Google Forms**: メールフォーム（embedded）
-- **開発サーバー**: `serve`パッケージ
+- **Google Forms**: メールフォーム・イベント申し込み（embedded）
+- **Markdown**: イベント情報の管理
+- **Browser-Sync**: 開発サーバー（自動リロード付き）
+- **ビルドツール**: Node.jsスクリプト（共通パーツ、イベントページ生成）
 
 ## セットアップ
 
@@ -42,8 +44,10 @@ npm run dev
 ```
 
 このコマンドで以下が同時に実行されます：
-- 開発サーバー（http://localhost:3000）
+- Browser-Sync開発サーバー（http://localhost:3000）
 - Tailwind CSSのウォッチモード（CSSの変更を自動でコンパイル）
+- イベントマークダウンの監視（変更時に自動ビルド）
+- ブラウザの自動リロード
 
 ### ビルド
 
@@ -51,7 +55,10 @@ npm run dev
 npm run build
 ```
 
-本番用にCSSを最適化（minify）します。
+本番用ビルド：
+- CSSを最適化（minify）
+- 共通パーツ（ヘッダー・フッター）をHTMLに埋め込み
+- イベントページを生成
 
 ## プロジェクト構造
 
@@ -61,14 +68,27 @@ sancha.dev/
 ├── src/
 │   └── input.css      # Tailwind CSSの入力ファイル
 ├── dist/
-│   └── output.css     # コンパイル済みCSS（自動生成）
+│   └── output.css     # コンパイル済みCSS（自動生成、gitignore）
+├── includes/           # 共通パーツ
+│   ├── header.html    # ヘッダー
+│   └── footer.html    # フッター
+├── events/             # イベント関連
+│   ├── index.html     # イベント一覧ページ
+│   ├── _template.html # イベント詳細テンプレート
+│   ├── src/           # イベントのマークダウンファイル
+│   │   └── YYYY-MM-DD.md
+│   ├── images/        # イベント用画像
+│   └── *.html         # 生成されたイベントページ（gitignore）
+├── scripts/            # ビルドスクリプト
+│   ├── build-events.js   # イベントページ生成
+│   └── build-includes.js # 共通パーツ埋め込み
 ├── favicon.ico        # ファビコン
 ├── ogp.png           # OGP画像
-├── kyohei.jpg        # オーガナイザー画像
-├── kei.jpg           # オーガナイザー画像
-├── poteboy.jpg       # オーガナイザー画像
+├── *.jpg             # オーガナイザー画像
 ├── tailwind.config.js # Tailwind設定
 ├── package.json       # npm設定
+├── nodemon.json      # ファイル監視設定
+├── bs-config.js      # Browser-Sync設定
 └── README.md         # このファイル
 ```
 
@@ -83,15 +103,21 @@ sancha.dev/
 
 ## デプロイ
 
-静的サイトなので、以下のサービスでホスティング可能です：
+### Cloudflare Pagesでの設定（推奨）
 
+現在、Cloudflare Pagesでホスティングされています：
+
+- **ビルドコマンド**: `npm run build`
+- **ビルド出力**: ルートディレクトリ
+- **ルートディレクトリ**: /
+- **自動デプロイ**: mainブランチへのプッシュで自動更新
+
+### その他のホスティングサービス
+
+静的サイトなので、以下のサービスでもホスティング可能：
 - GitHub Pages
 - Netlify
 - Vercel
-- Cloudflare Pages
-
-ビルドコマンド: `npm run build`  
-公開ディレクトリ: ルートディレクトリ
 
 ## カスタマイズ
 
@@ -109,9 +135,40 @@ colors: {
 
 ### コンテンツの更新
 
+#### 通常のコンテンツ
 - **テキスト**: `index.html`を直接編集
 - **画像**: ルートディレクトリに配置し、HTMLで参照
 - **スタイル**: `src/input.css`でカスタムCSSを追加
+
+#### ヘッダー・フッターの更新
+1. `/includes/header.html` または `/includes/footer.html` を編集
+2. 開発中は自動的に反映される
+3. 本番用は `npm run build` を実行
+
+⚠️ **注意**: 各HTMLファイル内のヘッダー・フッターは自動生成されるため、直接編集しても意味がありません。必ず `/includes/` 内のファイルを編集してください。
+
+#### イベントの追加
+1. `/events/src/` に `YYYY-MM-DD.md` 形式でマークダウンファイルを作成
+2. frontmatterでメタ情報を設定：
+   ```yaml
+   ---
+   title: "イベントタイトル"
+   date: "2025-02-15"
+   time: "14:00-17:00"
+   venue: "会場名"
+   capacity: 20
+   formUrl: "Google FormsのURL"
+   formHeight: "1380px"
+   ---
+   ```
+3. 本文にマークダウンでイベント詳細を記述
+4. `npm run build` または開発中は自動的にHTMLが生成される
+
+#### マークダウンでの機能
+- 通常のマークダウン記法
+- HTMLタグの直接記述（iframe、カスタムdivなど）
+- 画像の埋め込み（`/events/images/` に配置）
+- テーブル、コードブロックなど
 
 ## メンテナンス
 
