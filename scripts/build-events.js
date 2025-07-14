@@ -65,7 +65,7 @@ function processMarkdownFile(filename) {
     const formHtml = `
     <section class="py-12 px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold text-center mb-8">イベント申し込みフォーム</h2>
+        <h2 class="text-3xl font-bold mb-8">イベント申し込みフォーム</h2>
         <div class="w-full max-w-2xl mx-auto">
           <iframe
             src="${data.formUrl}${data.formUrl.includes('?') ? '&' : '?'}embedded=true"
