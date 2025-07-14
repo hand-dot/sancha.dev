@@ -120,7 +120,7 @@ function generateEventsList() {
       <p class="text-gray-600">
         <span class="block">📅 ${event.date} ${event.time || ""}</span>
         ${event.venue ? `<span class="block">📍 ${event.venue}</span>` : ""}
-        ${event.capacity ? `<span class="block">👥 定員 ${event.capacity}名</span>` : ""}
+        ${event.capacity ? `<span class="block">👥 定員 ${event.capacity}</span>` : ""}
       </p>
     </a>`;
     })
