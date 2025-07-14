@@ -84,9 +84,18 @@ function processMarkdownFile(filename) {
     html = html.replace('{{form}}', '');
   }
   
+  // ファイル先頭に自動生成警告を追加
+  const fileWarning = `<!-- 
+⚠️ 警告: このファイルは自動生成されます。直接編集しないでください！
+⚠️ イベント情報の編集は /events/src/${filename} で行ってください。
+⚠️ This file is auto-generated. Do not edit directly!
+⚠️ Edit the source file at /events/src/${filename} instead.
+-->
+`;
+  
   // HTMLファイルを出力
   const outputPath = path.join(eventsOutputDir, `${path.basename(filename, '.md')}.html`);
-  fs.writeFileSync(outputPath, html);
+  fs.writeFileSync(outputPath, fileWarning + html);
   console.log(`Generated: ${outputPath}`);
 }
 
