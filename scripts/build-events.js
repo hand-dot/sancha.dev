@@ -63,7 +63,7 @@ function processMarkdownFile(filename) {
   // 申し込みフォームがある場合は追加
   if (data.formUrl) {
     const formHtml = `
-    <section class="py-12 px-4 bg-gray-50">
+    <section class="py-12 px-4">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl font-bold text-center mb-8">イベント申し込みフォーム</h2>
         <div class="w-full max-w-2xl mx-auto">
