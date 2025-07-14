@@ -100,7 +100,7 @@ function generateEventsList() {
     const isPast = eventDate < new Date();
     
     return `
-    <a href="${event.url}" class="block bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow ${isPast ? 'opacity-60' : ''}">
+    <a href="${event.url}" class="block bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
       <div class="flex justify-between items-start mb-2">
         <h3 class="text-xl font-bold">${event.title}</h3>
         ${isPast ? '<span class="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">終了</span>' : ''}
@@ -115,7 +115,8 @@ function generateEventsList() {
   
   const indexPath = path.join(eventsOutputDir, 'index.html');
   const indexContent = fs.readFileSync(indexPath, 'utf8');
-  const updatedIndex = indexContent.replace('{{events_list}}', listHtml);
+  const listWarning = '<!-- ⚠️ 警告: このイベント一覧は自動生成されます。イベントの追加は /events/src/ に.mdファイルを作成してください ⚠️ -->';
+  const updatedIndex = indexContent.replace('{{events_list}}', listWarning + '\n' + listHtml);
   fs.writeFileSync(indexPath, updatedIndex);
   console.log('Generated events list');
 }
