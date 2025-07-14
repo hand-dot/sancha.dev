@@ -44,6 +44,7 @@ npm run dev
 ```
 
 このコマンドで以下が同時に実行されます：
+
 - Browser-Sync開発サーバー（http://localhost:3000）
 - Tailwind CSSのウォッチモード（CSSの変更を自動でコンパイル）
 - イベントマークダウンの監視（変更時に自動ビルド）
@@ -56,6 +57,7 @@ npm run build
 ```
 
 本番用ビルド：
+
 - CSSを最適化（minify）
 - 共通パーツ（ヘッダー・フッター）をHTMLに埋め込み
 - イベントページを生成
@@ -64,33 +66,46 @@ npm run build
 
 ```
 sancha.dev/
-├── index.html          # メインのHTMLファイル
+├── index.html          # メインのHTMLファイル ⚠️ ヘッダー/フッターは自動生成
 ├── src/
 │   └── input.css      # Tailwind CSSの入力ファイル
 ├── dist/
-│   └── output.css     # コンパイル済みCSS（自動生成、gitignore）
-├── includes/           # 共通パーツ
+│   └── output.css     # コンパイル済みCSS 🚫 自動生成（編集不可）
+├── includes/           # 共通パーツ ✏️ ここを編集
 │   ├── header.html    # ヘッダー
 │   └── footer.html    # フッター
 ├── events/             # イベント関連
-│   ├── index.html     # イベント一覧ページ
+│   ├── index.html     # イベント一覧ページ ⚠️ イベント一覧部分は自動生成
 │   ├── _template.html # イベント詳細テンプレート
-│   ├── src/           # イベントのマークダウンファイル
+│   ├── src/           # イベントのマークダウン ✏️ イベント追加はここ
 │   │   └── YYYY-MM-DD.md
 │   ├── images/        # イベント用画像
-│   └── *.html         # 生成されたイベントページ（gitignore）
+│   └── *.html         # 🚫 自動生成されたページ（編集不可）
+├── images/             # 画像ファイル
+│   └── organizers/    # オーガナイザー画像
 ├── scripts/            # ビルドスクリプト
 │   ├── build-events.js   # イベントページ生成
 │   └── build-includes.js # 共通パーツ埋め込み
 ├── favicon.ico        # ファビコン
 ├── ogp.png           # OGP画像
-├── *.jpg             # オーガナイザー画像
 ├── tailwind.config.js # Tailwind設定
 ├── package.json       # npm設定
 ├── nodemon.json      # ファイル監視設定
 ├── bs-config.js      # Browser-Sync設定
+├── CLAUDE.md         # AI開発アシスタント用ガイド
 └── README.md         # このファイル
 ```
+
+### ファイル編集ガイド
+
+| ファイル/フォルダ       | 編集可否       | 説明                                          |
+| ----------------------- | -------------- | --------------------------------------------- |
+| ✏️ `/includes/`         | **編集可**     | ヘッダー・フッターの共通パーツ                |
+| ✏️ `/events/src/`       | **編集可**     | イベント情報のマークダウンファイル            |
+| ✏️ `index.html`         | **編集可**     | メインコンテンツ（ヘッダー/フッター部分除く） |
+| ⚠️ `/events/index.html` | **一部編集可** | イベント一覧は自動生成                        |
+| 🚫 `/dist/`             | **編集不可**   | 自動生成されるCSS                             |
+| 🚫 `/events/*.html`     | **編集不可**   | 自動生成されるイベントページ                  |
 
 ## 主なセクション
 
@@ -115,6 +130,7 @@ sancha.dev/
 ### その他のホスティングサービス
 
 静的サイトなので、以下のサービスでもホスティング可能：
+
 - GitHub Pages
 - Netlify
 - Vercel
@@ -136,11 +152,13 @@ colors: {
 ### コンテンツの更新
 
 #### 通常のコンテンツ
+
 - **テキスト**: `index.html`を直接編集
 - **画像**: ルートディレクトリに配置し、HTMLで参照
 - **スタイル**: `src/input.css`でカスタムCSSを追加
 
 #### ヘッダー・フッターの更新
+
 1. `/includes/header.html` または `/includes/footer.html` を編集
 2. 開発中は自動的に反映される
 3. 本番用は `npm run build` を実行
@@ -148,6 +166,7 @@ colors: {
 ⚠️ **注意**: 各HTMLファイル内のヘッダー・フッターは自動生成されるため、直接編集しても意味がありません。必ず `/includes/` 内のファイルを編集してください。
 
 #### イベントの追加
+
 1. `/events/src/` に `YYYY-MM-DD.md` 形式でマークダウンファイルを作成
 2. frontmatterでメタ情報を設定：
    ```yaml
@@ -165,6 +184,7 @@ colors: {
 4. `npm run build` または開発中は自動的にHTMLが生成される
 
 #### マークダウンでの機能
+
 - 通常のマークダウン記法
 - HTMLタグの直接記述（iframe、カスタムdivなど）
 - 画像の埋め込み（`/events/images/` に配置）
