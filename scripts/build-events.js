@@ -148,7 +148,7 @@ function generateEventsList() {
       // 外部リンクの場合は rel を付与
       const externalAttrs = event.isExternal ? ' rel="noopener"' : "";
       const externalNote = event.isExternal
-        ? '<span class="ml-2 text-xs text-gray-500 align-middle">外部ページに遷移します</span>'
+        ? '<span class="ml-2 text-xs text-gray-500 align-middle">　外部ページに遷移します↗︎</span>'
         : "";
 
       return `
