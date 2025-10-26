@@ -183,6 +183,26 @@ colors: {
 3. 本文にマークダウンでイベント詳細を記述
 4. `npm run build` または開発中は自動的にHTMLが生成される
 
+#### 外部URLに遷移させるイベント（リダイレクト）
+
+イベントの詳細ページをこのサイトではなく外部サービス（connpass、Doorkeeper、Note、X のポストなど）に置きたい場合は、frontmatter に `externalUrl` を指定してください。
+
+```yaml
+---
+title: "○月度 もくもく会"
+date: "2025-11-15"
+externalUrl: "https://example.com/your-event-page" # 一覧クリック時にこのURLへ遷移します
+---
+```
+
+この設定をすると以下の挙動になります：
+
+- イベント一覧のカードをクリックすると、`externalUrl` に直接遷移します
+- `https://sancha.dev/events/YYYY-MM-DD` と `https://sancha.dev/events/YYYY-MM-DD.html` にアクセスした場合は即座に `externalUrl` へリダイレクトします（静的HTMLのmeta refresh + JSにより実現）
+- マークダウン本文は無視されます（表示されません）
+
+補足：`external_url` というスネークケースのキーでも同様に動作します。
+
 #### マークダウンでの機能
 
 - 通常のマークダウン記法
